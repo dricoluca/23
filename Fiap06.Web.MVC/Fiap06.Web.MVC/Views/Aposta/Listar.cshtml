@@ -1,0 +1,23 @@
+﻿@model IList<Fiap06.Web.MVC.Models.Aposta>
+@{
+    ViewBag.Title = "Listar";
+}
+
+<h2>Apostas</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Concurso</th>
+        <th>Data</th>
+        <th>Números</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Concurso.Numero</td>
+            <td>@item.Data</td>
+            <td>@item.SequenciaString</td>
+        </tr>
+    }
+</table>
+

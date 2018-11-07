@@ -1,0 +1,28 @@
+﻿@model Fiap05.Web.MVC.Models.CartaoReal
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastro de Cartão</h2>
+
+@Ajudante.Mensagem(TempData["msg"])
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.Numero)
+        @Html.TextBoxFor(c => c.Numero, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Cvv)
+        @Html.TextBoxFor(c => c.Cvv, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Status)
+        @Html.EnumDropDownListFor(c => c.Status, 
+                new { @class = "form-control" , disabled = "disabled" } )
+    </div>
+    @Ajudante.Botao("Cadastrar")
+}
+

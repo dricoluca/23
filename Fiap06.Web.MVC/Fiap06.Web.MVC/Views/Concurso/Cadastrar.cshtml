@@ -1,0 +1,30 @@
+﻿@model Fiap06.Web.MVC.Models.Concurso
+
+@{
+    ViewBag.Title = "Cadastrar";
+}
+
+<h2>Cadastro de Concurso</h2>
+
+@if (TempData["msg"] != null)
+{
+    <div class="alert alert-success">@TempData["msg"]</div>
+}
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(c => c.Data)
+        @Html.TextBoxFor(c => c.Data, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(c => c.Premio)
+        @Html.TextBoxFor(c => c.Premio, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.CheckBoxFor(c => c.Acumulado)
+        @Html.LabelFor(c => c.Acumulado)
+    </div>
+    <input type="submit" value="Cadastrar" class="btn btn-primary" />
+}
+
